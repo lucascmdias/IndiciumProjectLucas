@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+  - name: IndiciumLucasProject
+    schema: IndiciumLucasProject
+    description: This is a replica of the Postgres database used by our app
+    tables:
+      - name: orders
+        description: >
+          One record per order. Includes cancelled and deleted orders.
+        columns:
+          - name: id
+            description: Primary key of the orders table
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+
+      - name: sales_customer
+      - name: person_address 
+      - name: person_countryregion
+      - name: person_person
+      - name: person_stateprovince
+      - name: production_product
+      - name: sales_creditcard
+      - name: sales_salesorderdetail
+      - name: sales_salesorderheader
+      - name: sales_salesorderheadersalesreason
+      - name: sales_salesreason
+
