@@ -1,6 +1,7 @@
 with
     staging as (
-        select * from {{ref('stg_customers')}}
+        select * 
+        from {{ref('stg_customers')}}
 )
 
     , transformed as (
