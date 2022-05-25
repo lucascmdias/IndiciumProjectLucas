@@ -6,4 +6,4 @@ with
 
 SELECT * FROM source_data
 
-/* `indiciumlucas.IndiciumLucasProject.sales_customer`  */
+/* `indiciumlucas.IndiciumLucasProject.sales_customer` sfsf */
