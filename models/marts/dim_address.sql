@@ -14,10 +14,12 @@ with
 
         select 
             row_number() over (order by addressid) as address_sk
-            ,addressid
             ,addressline1
             ,city
             ,postalcode
+            ,countryregion.name as namecountryregion
+            ,stateprovince.name as namestateprovince
+            ,addressid
         from  {{ ref('stg_address')}} as address
         left join stateprovince on address.stateprovinceid = stateprovince.stateprovinceid
         left join countryregion on stateprovince.countryregioncode = countryregion.countryregioncode
