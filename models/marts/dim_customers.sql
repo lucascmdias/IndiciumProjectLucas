@@ -1,20 +1,17 @@
 with
-    staging as (
+    person as (
         select * 
-        from {{ref('stg_customers')}}
-)
+        from {{ref('stg_person')}}
+    )
 
-    , transformed as (
+    , customer as (
 
         select 
             row_number() over (order by customerid) as customer_sk
-            ,customerid as customer_id
-            ,personid as person_id
-            ,storeid as store_id
-            ,territoryid as territory_id
-            ,rowguid as rowgu_id
-            ,modifieddate as modified_date
-        from staging
+            ,customerid
+            ,CONCAT(person.firstname, ' ', person.lastname ) as name
+        from  {{ ref('stg_customers')}} as customer
+        left join person on customer.personid = person.businessentityid
     )
 
-select * from transformed
+select * from customer

@@ -1,9 +1,9 @@
 with
-    source_data as (
+    stg_customers as (
         SELECT * FROM {{source('IndiciumLucasProject','sales_customer')}}
             
     )
 
-SELECT * FROM source_data
+SELECT * FROM stg_customers
 
-/* `indiciumlucas.IndiciumLucasProject.sales_customer` sfsf */
+/* `indiciumlucas.IndiciumLucasProject.sales_customer`  */

@@ -1,5 +1,5 @@
 with
-    source_data as (
+    stg_product as (
         SELECT 
             productid
             ,name
@@ -19,4 +19,4 @@ with
             
     )
 
-SELECT * FROM source_data
+SELECT * FROM stg_product

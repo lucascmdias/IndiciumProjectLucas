@@ -1,7 +1,8 @@
 with
-    source_data as (
-        SELECT 
-            namestyle
+    stg_person as (
+        SELECT
+            businessentityid
+            ,namestyle
             ,firstname
             ,lastname
             ,emailpromotion
@@ -11,4 +12,4 @@ with
             
     )
 
-SELECT * FROM source_data
+SELECT * FROM stg_person

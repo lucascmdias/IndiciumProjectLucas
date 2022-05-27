@@ -1,8 +1,8 @@
 with
-    source_data as (
+    stg_stateprovince as (
         SELECT *
         FROM {{source('IndiciumLucasProject','person_stateprovince')}}
             
     )
 
-SELECT * FROM source_data
+SELECT * FROM stg_stateprovince

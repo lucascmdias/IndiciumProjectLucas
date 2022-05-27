@@ -1,5 +1,5 @@
 with
-    source_data as (
+    stg_salesorderheadersalesreason as (
         SELECT 
             salesorderid
             ,revisionnumber
@@ -19,4 +19,4 @@ with
             
     )
 
-SELECT * FROM source_data
+SELECT * FROM stg_salesorderheadersalesreason

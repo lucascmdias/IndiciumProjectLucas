@@ -1,8 +1,8 @@
 with
-    source_data as (
+    stg_credicard as (
         SELECT *
         FROM {{source('IndiciumLucasProject','sales_creditcard')}}
             
     )
 
-SELECT * FROM source_data
+SELECT * FROM stg_credicard
