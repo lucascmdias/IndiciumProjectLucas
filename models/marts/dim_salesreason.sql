@@ -4,12 +4,12 @@ with
         from {{ref('stg_salesreason')}}
     )
 
-    ,salesorderheadersalesreason as (
+    , reason as (
 
         select 
             row_number() over (order by salesorderid) as salesorder_sk
-        from  {{ ref('stg_salesorderheadersalesreason')}} as salesorderheadersalesreason
-        left join salesorderheadersalesreason on salesreason.salesreasonid = salesorderheadersalesreason.salesreasonid
+        from  {{ ref('stg_salesorderheadersalesreason')}} as reason
+        left join salesreason on salesreason.salesreasonid = reason.salesreasonid
     )
 
-select * from salesorderheadersalesreason
+select * from reason
