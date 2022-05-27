@@ -4,6 +4,7 @@ with
 
         select 
             row_number() over (order by creditcardid) as creditcard_sk
+            ,creditcardid
             ,cardtype
             ,cardnumber
             ,expmonth

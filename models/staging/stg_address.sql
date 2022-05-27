@@ -1,5 +1,5 @@
 with
-    stg_address as (
+    source_data as (
         SELECT 
             addressid
             ,city
@@ -11,4 +11,4 @@ with
             
     )
 
-SELECT * FROM stg_address
+SELECT * FROM source_data

@@ -1,5 +1,5 @@
 with
-    stg_salesorderdetail as (
+    source_data as (
         SELECT 
             salesorderid
             ,salesorderdetailid
@@ -14,4 +14,4 @@ with
             
     )
 
-SELECT * FROM stg_salesorderdetail
+SELECT * FROM source_data

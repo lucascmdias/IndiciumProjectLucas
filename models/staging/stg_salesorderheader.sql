@@ -1,7 +1,8 @@
 with
-    stg_salesorderheadersalesreason as (
+    source_data as (
         SELECT 
             salesorderid
+            ,customerid
             ,revisionnumber
             ,orderdate
             ,duedate
@@ -10,6 +11,7 @@ with
             ,billtoaddressid
             ,shiptoaddressid
             ,subtotal
+            ,creditcardid
             ,taxamt
             ,freight
             ,totaldue
@@ -19,4 +21,4 @@ with
             
     )
 
-SELECT * FROM stg_salesorderheadersalesreason
+SELECT * FROM source_data

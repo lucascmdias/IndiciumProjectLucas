@@ -14,6 +14,7 @@ with
 
         select 
             row_number() over (order by addressid) as address_sk
+            ,addressid
             ,addressline1
             ,city
             ,postalcode
