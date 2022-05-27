@@ -36,7 +36,10 @@ with
                 reason.salesorder_sk as salesorderheadersalesreason_fk,
                 salesorderheader.orderdate,
                 salesorderheader.status,
-                salesorderheader.subtotal
+                salesorderheader.subtotal,
+                salesorderheader.taxamt,
+                salesorderheader.freight,
+                salesorderheader.totaldue,
         from {{ref('stg_salesorderheader')}} as salesorderheader 
         left join address on
             salesorderheader.shiptoaddressid = address.addressid
